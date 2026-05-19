@@ -32,7 +32,7 @@ Open `voodoo_bowl.html` in any modern browser. No install, no server, no depende
 
 Patrick Chan was a member of the Java platform team at Sun Microsystems and co-author of *The Java Developers Almanac*. He won the Duke Award at JavaOne in 1998. His personal site at xeo.com showcased Java applet work he had built for clients including Sun, JavaSoft, Oracle, Yahoo, and the Democratic National Convention.
 
-One of those projects, listed on xeo.com as "Voodoo Football," was a promotional applet commissioned by Sun and the House of Blues for the Super Bowl. Chan's own description: "a football game where you try to get a touchdown while avoiding zombies and hitting referees." The game was built in Java 1.1 and packaged as a single class file (`Football.class`) inside a Windows Cabinet archive (`football.cab`), with a 500x280 sprite sheet and seven `.au` sound effects.
+One of those projects, listed on xeo.com as "Voodoo Football," was a promotional applet commissioned by Sun and the House of Blues for Super Bowl XXXI, held January 26, 1997 in New Orleans. The House of Blues sponsored the halftime show that year. Chan's own description: "a football game where you try to get a touchdown while avoiding zombies and hitting referees." The game was hosted on the House of Blues website at hob.com/football/, where it appeared in the site's "Interactive" games section alongside a puzzle, a blues guitar app, and a jukebox. It was built in Java 1.1 and packaged as a single class file (`Football.class`) inside a Windows Cabinet archive (`football.cab`), with a 500x280 sprite sheet and seven `.au` sound effects.
 
 After the promotion ended, the game appeared on javagame.net under the name Voodoo Bowl and later on coffeebreakarcade.com, where it remained available for years. The Wayback Machine archived the javagame.net page between 2001 and 2023. The original `.cab` file and both asset files — `images.gif` and `bg.gif` — were preserved in the Internet Archive.
 
@@ -44,6 +44,9 @@ This repository is a reconstruction of that game in HTML5 Canvas, built from the
 
 - [Patrick Chan — Wikipedia](https://en.wikipedia.org/wiki/Patrick_Peter_Chan)
 - [xeo.com portfolio (May 1997) — Internet Archive](https://web.archive.org/web/19970513005208/http://www.xeo.com/)
+- [Voodoo Bowl on hob.com (May 1998) — Internet Archive](https://web.archive.org/web/19980508141838/http://hob.com/football/)
+- [Voodoo Bowl rules on hob.com (May 1998) — Internet Archive](https://web.archive.org/web/19980508151421/http://hob.com/football/play.html)
+- [House of Blues Interactive section (Dec 1997) — Internet Archive](https://web.archive.org/web/19971212051114/http://www.hob.com/vanilla/)
 - [Voodoo Bowl on javagame.net — Internet Archive](https://web.archive.org/web/20081119144728/http://www.javagame.net/games/voodoo)
 
 ## About the Reconstruction
