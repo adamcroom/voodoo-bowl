@@ -696,9 +696,6 @@ function loop(ts) {
         if (G.pauseTime > 0 && Date.now() > G.pauseTime) {
           endDown();
         }
-        let t = G.usedTime;
-        if (G.startTime > 0) t += Date.now() - G.startTime;
-        if (t >= 60000 && !G.sacked && !G.touchdown && !G.gameOver) endDown();
       } else {
         // Defenders keep moving during game over (F36)
         moveDefenders();
