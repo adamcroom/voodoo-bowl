@@ -14,10 +14,12 @@ Open `voodoo_bowl.html` in any modern browser. No install, no server, no depende
 
 | Action | Keyboard | Mobile |
 |--------|----------|--------|
-| Move right | Arrow Right / L | Right button |
-| Move left | Arrow Left / J | Left button |
-| Move up | Arrow Up / I | Up button |
-| Move down | Arrow Down / K | Down button |
+| Move right | Arrow Right / l | Right button |
+| Move left | Arrow Left / j | Left button |
+| Move up | Arrow Up / i | Up button |
+| Move down | Arrow Down / k | Down button |
+
+As in the original applet, the letter keys are lowercase only (Caps Lock off), any key restarts after a game over, and the game shows "click here to play" whenever it doesn't have keyboard focus.
 
 ## How to Play
 
@@ -51,18 +53,18 @@ This repository is a reconstruction of that game in HTML5 Canvas, built from the
 
 ## About the Reconstruction
 
-The game is a single, self-contained HTML file. All 30 original sprites are extracted from `images.gif` and all 7 sound effects are converted from `.au` format — everything is embedded as base64 data URIs directly in the HTML. No external files needed.
+The game is a single, self-contained HTML file. Every sprite is cropped from `images.gif` at the coordinates in the original `init()`, and the sound effects are decoded from the original `.au` files — everything is embedded as base64 data URIs directly in the HTML. No external files needed.
 
 ### What's in the single file
 
-- **30 sprites** extracted from the original 500x280 sprite sheet
-- **7 sound effects** converted from Sun AU to AAC/M4A
+- **45 sprites** (31 game images, 10 digits, 4 down markers) cropped from the original 500x280 sprite sheet
+- **6 sound effects** decoded losslessly from 8 kHz µ-law Sun AU to PCM WAV (the seventh, `-crowdsoft`, is loaded by the original but never played)
 - **Game logic** reverse-engineered from Java bytecode disassembly
 - **HUD** rendered from the original `bg.gif` background strip
 
 ### Accuracy
 
-The recreation is based on a complete disassembly of `Football.class` (11,904 bytes, Java 1.0). 38 specific differences were identified and corrected to match the original, covering:
+The recreation is based on a complete disassembly of `Football.class` (11,904 bytes, Java 1.0). The game script is a method-by-method port of that bytecode, using the original field names and constants. Two audit passes (38 items, then 33 more) are documented in `CHANGELOG.md`, covering:
 
 - Spawn density, defender AI, and difficulty progression
 - Directional sack sprites and tackle mechanics
@@ -73,10 +75,10 @@ The recreation is based on a complete disassembly of `Football.class` (11,904 by
 
 ## Tech
 
-- Single HTML file (~230KB)
-- HTML5 Canvas (568x280 game + 568x103 HUD)
+- Single HTML file (~400KB)
+- One HTML5 Canvas, 568x389, laid out like the applet: a 568x286 field back buffer (field at offset 4,6) above the 560x103 `bg.gif` HUD
 - No frameworks, no build tools, no external assets
-- `requestAnimationFrame` game loop at 333ms tick interval
+- 333ms game tick (`setTimeout`, like the original's `Thread.sleep(333)`); redraws are requested the way AWT `repaint()` was
 - Works offline — just save the file
 
 ## License
